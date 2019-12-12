@@ -4,8 +4,8 @@
 
     <div class="topImg">
         <div class="ptext">
-            <span class="border">
-            Parallax Website
+            <span class="border trans">
+                Coding
             </span>
         </div>
     </div>

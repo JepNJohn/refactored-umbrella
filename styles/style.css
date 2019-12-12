@@ -23,6 +23,10 @@ body,html{
 
 }
 
+.loginImg{
+    background-image:url('../img/space.jpg');
+    min-height: 100%;
+}
 .topImg{
     background-image:url('../img/img1.jpg');
     min-height: 100%;
@@ -64,4 +68,19 @@ body,html{
     padding:20px;
 
 }
+.loginH1{
+    color:white;
+    text-align: center;
+    padding-top:150px;
+    padding-right: 50px;
+    height: 200px;
+}
 
+.loginForm{
+        width: 300px;
+        margin: 0 auto;
+        color:white;
+}
+.btn{
+    background-color:grey;
+}
