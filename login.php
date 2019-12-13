@@ -7,16 +7,40 @@ if( isset($_SESSION["loggedIn"])){
     header("location:index.php");
     }
 }
+if(!empty($_POST)){
+
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+   $SQL = "SELECT * FROM users";
+
+   $result = $mysqli->query($SQL);
+
+   $row = mysqli_fetch_assoc($result);
+
+   $validPass = password_verify($password,$row['password']);
+
+   if($row){
+     if(password_verify($password, $row['password'])){
+       $_SESSION['loggedIn'] = 1;
+       $_SESSION['id'] = $row['id'];
+       header("location:index.php");
+     }else{
+       echo("error som fan här asså");
+     }
+     }
+   
+}
 ?>
 <?php 
-
+    
 
 ?>
 
 
 <div class="loginImg">
 <h1 class="loginH1">Cool Login</h1>
-    <form class="loginForm" class="form-horizontal" action="loginHandler.php">
+    <form class="loginForm" method="post" class="form-horizontal" action="login.php">
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Email:</label>
     <div class="col-sm-10">
@@ -31,7 +55,7 @@ if( isset($_SESSION["loggedIn"])){
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" value="send" class="btn btn-default">Submit</button>
     </div>
   </div>
 </form>

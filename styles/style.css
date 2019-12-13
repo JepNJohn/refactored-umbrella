@@ -84,3 +84,7 @@ body,html{
 .btn{
     background-color:grey;
 }
+#logoutBtn{
+    margin-left: 75px;
+    background-color: red;
+}
